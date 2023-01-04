@@ -35,7 +35,7 @@ const Header = () => {
                                             <a href="/profile">Mening sahifam</a>
                                         </li>
                                         <li className="menu-item menu-item-has-children">
-                                            <a href="/exit">Akkauntdan chiqish</a>
+                                            <Link to="/exit">Akkauntdan chiqish</Link>
                                         </li>
                                     </ul>
                                 </li>

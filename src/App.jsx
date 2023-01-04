@@ -3,6 +3,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header';
 import Books from './pages/Books/Books';
+import Exit from './pages/Exit/Exit';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import NoPage from './pages/NoPage/NoPage';
@@ -29,6 +30,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login userSign={sign}/>} />
             <Route path='/books' element={<Books />} />
+            <Route path='/exit' element={<Exit />} />
             <Route path="*" element={<NoPage />} />
         </Routes>
     </div>
