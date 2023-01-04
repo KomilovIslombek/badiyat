@@ -1,0 +1,139 @@
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header{
+    // background: linear-gradient(0deg, #191919, #191919),
+    // linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    background: #191919;  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 20px;
+    // border-top-left-radius: 25px;
+    // border-top-right-radius: 25px;
+
+    .radius{
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+    .nav__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    
+        // Nav logo start
+        .nav__logo > div {
+            a{
+                font-family: 'Rotterburg Stylish FREE';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 25px;
+                line-height: 144.4%;
+                color: #C9AC8C;
+                text-decoration: none;
+            }
+        }
+        // Nav logo end
+    
+        // Nav menu start
+        .nav__menu{
+            width: 38%;
+            margin-left: 70px;
+            @include flex;
+            li {
+                color: white;
+                list-style-type: none;
+                font-family: 'HelveticaNeueCyr', sans-serif;
+                font-weight: 200;
+                font-size: 16px;
+                line-height: 144.4%;
+                position: relative ;
+                transition: .2s linear;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }&:hover{
+                    opacity: .80;
+                    cursor: pointer;
+                }
+            } 
+        }
+        @media screen and (max-width: 780px) {
+            .nav__menu{
+                display: none;
+            }
+        }
+        //Nav menu end
+
+        //Nav profile start
+        .nav__profile{
+            ul, li{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .sub-menu{
+                display: none;
+                background: #191919;
+                position: absolute;
+                bottom: -77px;
+                padding: 15px;
+                text-align: center;
+                transition: .2s all;
+                box-shadow: 0 1px 1px 1px #232222;
+                li:last-child{
+                    margin-top: 3px;
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    &:hover{
+                        opacity: .90;
+                    }
+                }
+            }
+            .profile {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                // background-color: red;
+                padding: 25px 10px 25px 5px;
+                span{
+                    color: white;
+                    margin: 0 5px;
+                    i{
+                        font-size: 12px;
+                    }
+                }
+            }&:hover{
+                .sub-menu{
+                    display: block;
+                    transition:  .2s all;
+                }
+            }
+        }
+        //Nav profile end
+    }
+    // .active{
+    //     position: relative;
+    // }
+    .active::after{
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 1px;
+        background-color: #FFFFFF;
+        border-radius: 6px;
+        bottom: -29px;
+        // top: 0;
+        right: 0px;
+        left: 0;
+        transition: .2s linear;
+    }
+
+}
