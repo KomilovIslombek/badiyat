@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Exit = () => {
@@ -6,8 +6,11 @@ const Exit = () => {
     const register = JSON.parse(window.localStorage.getItem("sign"))
     if(register == true) {
         localStorage.removeItem("sign");
-        navigate('/login');
+        navigate('/');
     }
+    useEffect(() => {
+        navigate('/login');
+    }, [register]);
     return (
         <>
             
